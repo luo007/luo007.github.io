@@ -31,5 +31,5 @@ docker run --restart always --name mynginx -d nginx
 如果容器已经被创建，我们想要修改容器的重启策略
 ```docker update --restart no mynginx```
 ##### 注意：
-容器只有在成功启动后restart policy才能生效。这里的"成功启动"是指容器处于up至少10秒且已经处于docker监管。这是避免没有成功启动的容器陷入restart的死循环。
-如果手动stop一个容器，容器设置的restart policy将会被忽略，除非Docker守护进程重启或者容器手动重启；这是避免了如果重启策略设置了always，如果不忽略policy那么容器无法手动停止。
+  容器只有在成功启动后restart policy才能生效。这里的"成功启动"是指容器处于up至少10秒且已经处于docker监管。这是避免没有成功启动的容器陷入restart的死循环。
+  如果手动stop一个容器，容器设置的restart policy将会被忽略，除非Docker守护进程重启或者容器手动重启；这是避免了如果重启策略设置了always，如果不忽略policy那么容器无法手动停止。
